@@ -175,11 +175,13 @@ http://localhost:8501
 ---
 ## ☁️ Despliegue en Oracle Cloud Infrastructure
 
-NovaTech AI será desplegado en Oracle Cloud Infrastructure utilizando un contenedor de aplicación.
+NovaTech AI será desplegado en Render utilizando un contenedor de aplicación.
+
+
 
 ### URL pública
 
-> Pendiente de agregar después del despliegue.
+> (https://novatech-ai-6r3y.onrender.com)
 
 ### Evidencia del despliegue
 
