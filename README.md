@@ -287,11 +287,11 @@ https://novatech-ai-6r3y.onrender.com
 
 #### Aplicación en ejecución
 
-![Aplicación](docs/app-running.png)
+![Aplicación](docs/app_running.png)
 
 #### Servicio desplegado en Render
 
-![Render](docs/render-live.png)
+![Render](docs/renderlive.png)
 # 👨‍💻 Autor
 
 **Eduardo Felipe**
