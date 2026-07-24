@@ -139,7 +139,7 @@ novatech-ai/
 # 🚀 Instalación
 
 ```powershell
-git clone URL_DEL_REPOSITORIO
+git clone https://github.com/Jvfelipeast/novatech-ai
 
 cd novatech-ai
 
@@ -173,10 +173,26 @@ http://localhost:8501
 ```
 
 ---
+## ☁️ Despliegue en Oracle Cloud Infrastructure
 
-# 🧪 Casos de prueba
+NovaTech AI será desplegado en Oracle Cloud Infrastructure utilizando un contenedor de aplicación.
 
-## Preguntas respondidas por la documentación
+### URL pública
+
+> Pendiente de agregar después del despliegue.
+
+### Evidencia del despliegue
+
+La evidencia incluirá:
+
+- Aplicación ejecutándose en OCI.
+- Dirección pública disponible.
+- Consulta realizada correctamente.
+- Respuesta generada con sus fuentes.
+
+## 🧪 Ejemplos de uso
+
+### Preguntas respondidas por la documentación
 
 - ¿Cuántos días hábiles de vacaciones corresponden por año?
 - ¿Con cuánto tiempo debo solicitar un permiso?
@@ -184,15 +200,43 @@ http://localhost:8501
 - ¿Puedo colocar contratos reales en una IA pública?
 - ¿Qué debo hacer si envié información al destinatario equivocado?
 
-## Preguntas fuera del alcance
+### Ejemplo de respuesta 1
+
+**Pregunta:**
+
+> ¿Cuántos días hábiles de vacaciones corresponden por año?
+
+**Respuesta generada:**
+
+> De acuerdo con la Política de Vacaciones de NovaTech Guatemala, los colaboradores tienen derecho a 15 días hábiles de vacaciones por cada año completo de trabajo. La programación debe coordinarse previamente con el jefe inmediato.
+
+**Fuentes utilizadas:**
+
+- Política de Vacaciones.
+- Página correspondiente a la duración y programación de vacaciones.
+
+### Ejemplo de respuesta 2
+
+**Pregunta:**
+
+> ¿Qué debo hacer si envié información al destinatario equivocado?
+
+**Respuesta generada:**
+
+> Debes informar inmediatamente al responsable correspondiente y seguir el procedimiento interno para incidentes de confidencialidad. También se debe evitar reenviar o continuar compartiendo la información mientras se evalúa la situación.
+
+**Fuentes utilizadas:**
+
+- Política de Confidencialidad.
+- Sección relacionada con incidentes y divulgación no autorizada.
+
+### Preguntas fuera del alcance documental
 
 - ¿La empresa ofrece seguro dental?
 - ¿Cuál es el salario de un analista?
 - ¿Cuántos días de teletrabajo existen?
 
-En estos casos el sistema debe indicar que no encontró esa información dentro de las políticas disponibles.
-
----
+Cuando la información no aparece en los documentos, el agente responde que no encontró datos suficientes dentro de la base documental disponible.
 
 # 📌 Decisiones técnicas
 
@@ -222,7 +266,6 @@ En estos casos el sistema debe indicar que no encontró esa información dentro 
 - Carga dinámica de nuevos documentos.
 - Múltiples bases documentales.
 - Integración con bases de datos.
-- Despliegue en la nube.
 - Evaluación automática de respuestas.
 - Métricas de uso.
 
@@ -230,13 +273,23 @@ En estos casos el sistema debe indicar que no encontró esa información dentro 
 
 # 📸 Capturas
 
-> *(Agregar aquí capturas de la aplicación una vez publicada en GitHub.)*
+## 📸 Evidencia visual
 
-- Pantalla principal.
-- Consulta realizada.
-- Respuesta con fuentes.
-- Fragmentos recuperados.
+### Pantalla principal
 
+> Captura pendiente.
+
+### Consulta realizada
+
+> Captura pendiente.
+
+### Respuesta generada con fuentes
+
+> Captura pendiente.
+
+### Aplicación desplegada en OCI
+
+> Captura pendiente.
 ---
 
 # 👨‍💻 Autor
