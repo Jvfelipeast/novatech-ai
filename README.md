@@ -1,140 +1,252 @@
-# ComuHR AI
+# 🤖 NovaTech AI
 
-Asistente de inteligencia artificial con arquitectura RAG para consultar políticas
-internas ficticias de **NovaTech Guatemala, S.A.**
+> **Enterprise Knowledge Assistant**
 
-> Todos los documentos y datos incluidos son ficticios y fueron creados únicamente
-> para fines educativos. El proyecto no contiene información real de una empresa.
+Asistente de Inteligencia Artificial basado en **Retrieval-Augmented Generation (RAG)** para consultar políticas internas mediante lenguaje natural.
 
-## Problema
+> ⚠️ **Aviso:** Todos los documentos, nombres y datos incluidos en este proyecto son **ficticios** y fueron creados exclusivamente con fines educativos. No contienen información real de ninguna empresa.
 
-Las políticas internas suelen estar distribuidas entre distintos documentos. Esto
-provoca consultas repetitivas, tiempo perdido y respuestas inconsistentes.
+---
 
-## Solución
+# 📖 Descripción
 
-ComuHR AI permite hacer preguntas en lenguaje natural y genera respuestas basadas
-exclusivamente en una base documental controlada. También muestra los documentos
-y páginas recuperados para facilitar la trazabilidad.
+NovaTech AI es un asistente empresarial desarrollado con Python que permite consultar políticas internas utilizando Inteligencia Artificial.
 
-## Funcionalidades del MVP
+El sistema combina búsqueda semántica mediante **FAISS** con un modelo de lenguaje de **Google Gemini**, garantizando que las respuestas se generen únicamente a partir de la documentación disponible.
 
-- Lectura de múltiples archivos PDF.
-- División del texto en fragmentos.
-- Embeddings con Gemini.
-- Búsqueda semántica con FAISS.
-- Respuestas generadas con Gemini.
-- Referencia a documentos y páginas.
-- Manejo explícito de preguntas sin respuesta documental.
-- Interfaz conversacional con Streamlit.
+---
 
-## Arquitectura
+# 🎯 Problema
+
+En muchas organizaciones las políticas internas están distribuidas entre múltiples documentos PDF.
+
+Esto provoca:
+
+- Tiempo perdido buscando información.
+- Consultas repetitivas al departamento de RR. HH.
+- Respuestas inconsistentes.
+- Dificultad para localizar la fuente original.
+
+---
+
+# 💡 Solución
+
+NovaTech AI permite realizar preguntas en lenguaje natural y responde exclusivamente utilizando la información recuperada desde la base documental.
+
+Además, cada respuesta incluye las fuentes consultadas para facilitar la trazabilidad y transparencia.
+
+---
+
+# ✨ Funcionalidades
+
+- 📄 Lectura automática de múltiples archivos PDF.
+- ✂️ Fragmentación inteligente de documentos.
+- 🧠 Embeddings utilizando Google Gemini.
+- 🔎 Búsqueda semántica mediante FAISS.
+- 🤖 Generación de respuestas con Google Gemini.
+- 📚 Referencias a documentos y páginas utilizadas.
+- 💬 Interfaz conversacional desarrollada con Streamlit.
+- 📝 Historial de conversación.
+- ⚡ Persistencia automática del índice vectorial.
+- 🚫 Manejo de preguntas fuera del alcance documental.
+- ⚠️ Manejo amigable de errores (API, cuota, autenticación).
+
+---
+
+# 🛠 Tecnologías utilizadas
+
+- Python
+- Streamlit
+- LangChain
+- Google Gemini API
+- FAISS
+- PyPDFLoader
+- python-dotenv
+
+---
+
+# 🏗 Arquitectura
 
 ```text
-PDF → PyPDFLoader → fragmentación → embeddings → FAISS
-                                             ↓
-Pregunta → búsqueda semántica → contexto → Gemini → respuesta y fuentes
+                Documentos PDF
+                       │
+                       ▼
+                 PyPDFLoader
+                       │
+                       ▼
+             Fragmentación (Chunks)
+                       │
+                       ▼
+                 Embeddings Gemini
+                       │
+                       ▼
+                     FAISS
+                       │
+        ┌──────────────┴──────────────┐
+        │                             │
+        ▼                             ▼
+ vector_store/                 Búsqueda Semántica
+ (persistente)                       │
+                                     ▼
+                                Contexto RAG
+                                     │
+                                     ▼
+                               Google Gemini
+                                     │
+                                     ▼
+                      Respuesta + Fuentes utilizadas
 ```
 
-## Estructura
+---
+
+# 📁 Estructura del proyecto
 
 ```text
-comuhr-ai/
+novatech-ai/
+│
 ├── app.py
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── .env.example
+│
 ├── data/
 │   ├── Politica_de_Confidencialidad.pdf
 │   ├── Politica_de_Permisos_y_Ausencias.pdf
 │   └── Politica_de_Vacaciones.pdf
+│
 ├── docs/
 │   ├── AI_PROJECT_CANVAS.md
 │   └── PREGUNTAS_DE_PRUEBA.md
-├── .env.example
-├── .gitignore
-├── requirements.txt
-└── README.md
+│
+├── tests/
+│   └── smoke_test.py
+│
+└── vector_store/
+    (Generado automáticamente)
 ```
 
-## Requisitos
+---
 
-- Python 3.11 o 3.12.
-- Una clave de la API de Gemini.
-- Conexión a internet durante la indexación y generación de respuestas.
+# ⚙️ Requisitos
 
-## Instalación en Windows
+- Python 3.11 o superior
+- Clave de Google Gemini API
+- Conexión a Internet
+
+---
+
+# 🚀 Instalación
 
 ```powershell
-git clone URL_DE_TU_REPOSITORIO
-cd comuhr-ai
+git clone URL_DEL_REPOSITORIO
+
+cd novatech-ai
 
 python -m venv .venv
+
 .\.venv\Scripts\activate
 
 python -m pip install --upgrade pip
-pip install -r requirements.txt
 
-copy .env.example .env
+pip install -r requirements.txt
 ```
 
-Abre `.env` y reemplaza `tu_clave_aqui` con tu clave.
+Crear el archivo `.env`:
 
-## Ejecución
+```text
+GOOGLE_API_KEY=TU_API_KEY
+```
+
+---
+
+# ▶️ Ejecución
 
 ```powershell
 streamlit run app.py
 ```
 
-La terminal mostrará una dirección local, normalmente:
+La aplicación estará disponible normalmente en:
 
 ```text
 http://localhost:8501
 ```
 
-## Pruebas recomendadas
+---
 
-### Preguntas cuya respuesta está en los documentos
+# 🧪 Casos de prueba
 
-- ¿Cuántos días hábiles de vacaciones corresponden por cada año?
-- ¿Con cuánto tiempo debo solicitar vacaciones?
+## Preguntas respondidas por la documentación
+
+- ¿Cuántos días hábiles de vacaciones corresponden por año?
+- ¿Con cuánto tiempo debo solicitar un permiso?
 - ¿Qué debo hacer antes de salir de vacaciones?
-- ¿Con cuánto tiempo se solicita un permiso previsible?
-- ¿Puedo colocar contratos reales en una herramienta pública de IA?
+- ¿Puedo colocar contratos reales en una IA pública?
 - ¿Qué debo hacer si envié información al destinatario equivocado?
 
-### Preguntas fuera del alcance
+## Preguntas fuera del alcance
 
 - ¿La empresa ofrece seguro dental?
 - ¿Cuál es el salario de un analista?
-- ¿Cuántos días de teletrabajo hay por semana?
+- ¿Cuántos días de teletrabajo existen?
 
-El comportamiento esperado es reconocer que esa información no aparece en las
-políticas y recomendar la consulta al área responsable.
+En estos casos el sistema debe indicar que no encontró esa información dentro de las políticas disponibles.
 
-## Decisiones técnicas
+---
 
-- Se utiliza recuperación semántica para encontrar fragmentos relacionados con la
-  pregunta aunque no usen exactamente las mismas palabras.
-- La temperatura del modelo es baja para reducir variaciones.
-- El prompt prohíbe completar vacíos con conocimiento general.
-- Se muestran fuentes recuperadas para mejorar la transparencia.
-- No se almacenan documentos reales ni datos personales.
+# 📌 Decisiones técnicas
 
-## Limitaciones
+- Se utiliza búsqueda semántica para recuperar los fragmentos más relevantes.
+- El modelo trabaja únicamente con el contexto recuperado (RAG).
+- El prompt impide completar información utilizando conocimiento general.
+- Se muestran las fuentes utilizadas para aumentar la transparencia.
+- El índice FAISS se genera automáticamente la primera vez y posteriormente se reutiliza para acelerar la carga de la aplicación.
 
-- Una respuesta generada por IA todavía puede contener errores.
-- FAISS se crea nuevamente al iniciar la aplicación.
-- No hay autenticación ni perfiles de usuario.
-- No se evalúa automáticamente la fidelidad de cada respuesta.
-- El prototipo no debe usarse para decisiones laborales o legales reales.
+---
 
-## Próximas mejoras
+# ⚠️ Limitaciones
 
-- Persistir el índice vectorial.
-- Permitir carga controlada de documentos.
-- Añadir evaluación automática de respuestas.
-- Incorporar filtros por tipo de política.
-- Desplegar la aplicación en la nube.
-- Registrar métricas sin almacenar información sensible.
+- El proyecto corresponde a un **MVP (Minimum Viable Product)**.
+- Las respuestas dependen completamente de la calidad de los documentos.
+- El sistema requiere conexión a Internet para utilizar Google Gemini.
+- No existe autenticación de usuarios.
+- No almacena conversaciones en una base de datos.
+- No debe utilizarse para decisiones empresariales reales.
 
-## Autor
+---
 
-Proyecto desarrollado para el Challenge AluraAgente de ONE AI.
+# 🚀 Próximas mejoras
+
+- Autenticación de usuarios.
+- Panel administrativo.
+- Carga dinámica de nuevos documentos.
+- Múltiples bases documentales.
+- Integración con bases de datos.
+- Despliegue en la nube.
+- Evaluación automática de respuestas.
+- Métricas de uso.
+
+---
+
+# 📸 Capturas
+
+> *(Agregar aquí capturas de la aplicación una vez publicada en GitHub.)*
+
+- Pantalla principal.
+- Consulta realizada.
+- Respuesta con fuentes.
+- Fragmentos recuperados.
+
+---
+
+# 👨‍💻 Autor
+
+**Eduardo Felipe**
+
+Proyecto desarrollado como parte del **Challenge ONE AI** de **Oracle Next Education (ONE)** y **Alura LATAM**.
+
+---
+
+# 📄 Licencia
+
+Este proyecto fue desarrollado con fines exclusivamente educativos y de aprendizaje.
