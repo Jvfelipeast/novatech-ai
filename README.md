@@ -275,25 +275,23 @@ Cuando la información no aparece en los documentos, el agente responde que no e
 
 # 📸 Capturas
 
-## 📸 Evidencia visual
+## 🚀 Deployment
 
-### Pantalla principal
+La aplicación fue desplegada en Render utilizando Docker.
 
-> Captura pendiente.
+**Demo en vivo:**
 
-### Consulta realizada
+https://novatech-ai-6r3y.onrender.com
 
-> Captura pendiente.
+### Evidencias
 
-### Respuesta generada con fuentes
+#### Aplicación en ejecución
 
-> Captura pendiente.
+![Aplicación](docs/app-running.png)
 
-### Aplicación desplegada en OCI
+#### Servicio desplegado en Render
 
-> Captura pendiente.
----
-
+![Render](docs/render-live.png)
 # 👨‍💻 Autor
 
 **Eduardo Felipe**
