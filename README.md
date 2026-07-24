@@ -173,7 +173,7 @@ http://localhost:8501
 ```
 
 ---
-## ☁️ Despliegue en Oracle Cloud Infrastructure
+## ☁️ Despliegue en Render
 
 NovaTech AI será desplegado en Render utilizando un contenedor de aplicación.
 
@@ -187,7 +187,7 @@ NovaTech AI será desplegado en Render utilizando un contenedor de aplicación.
 
 La evidencia incluirá:
 
-- Aplicación ejecutándose en OCI.
+- Aplicación ejecutándose en Render.
 - Dirección pública disponible.
 - Consulta realizada correctamente.
 - Respuesta generada con sus fuentes.
@@ -292,6 +292,7 @@ https://novatech-ai-6r3y.onrender.com
 #### Servicio desplegado en Render
 
 ![Render](docs/renderlive.png)
+
 # 👨‍💻 Autor
 
 **Eduardo Felipe**
